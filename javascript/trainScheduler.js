@@ -1,4 +1,4 @@
-// Your web app's Firebase configuration
+// My web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDYzd5nelx9X7JBSVovaEGhRmnmfZikbOA",
   authDomain: "train-scheduler-basic-dffe3.firebaseapp.com",

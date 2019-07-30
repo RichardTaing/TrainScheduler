@@ -1,5 +1,6 @@
 body {
-  background: url("/images/flinders_street.jpg") no-repeat center center fixed;
+  background: url("/images/Southern_cross_station_night.jpg") no-repeat center
+    center fixed;
   -webkit-backdrop-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -71,8 +72,9 @@ table {
 
 .panel-info > .panel-heading {
   /* color: #31708f; */
-  background-color: #d9edfa;
-  border-color: #bce8f1;
+  background-color: #0378bb;
+  border-color: #fccc0a;
+  border-width: 5px;
 }
 
 .form-control {
