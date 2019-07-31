@@ -1,5 +1,5 @@
 body {
-  background: url("/images/Southern_cross_station_night.jpg") no-repeat center
+  background: url("../images/Southern_cross_station_night.jpg") no-repeat center
     center fixed;
   -webkit-backdrop-size: cover;
   -moz-background-size: cover;
