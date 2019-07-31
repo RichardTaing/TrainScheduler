@@ -62,7 +62,9 @@ $(document).ready(function() {
 
 $("#submit-btn").on("click", function(event) {
   event.preventDefault();
-
+  var gameSound = new Audio("/sounds/steam-train-whistle-daniel_simon.mp3");
+  gameSound.volume = 0.55;
+  gameSound.play();
   //gets inputs. if valid creates newTrain object using values and pushes to firebase database.
   if (getInputValues()) {
     //Creates a string with todays date and time of 'time';
