@@ -53,14 +53,18 @@ table {
   border-bottom-left-radius: 4px;
 }
 
-.panel-body {
-  padding: 15px;
-}
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
-  color: inherit;
+  color: #fccc0a;
+  animation-duration: 15s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+}
+
+.panel-body {
+  padding: 15px;
 }
 
 .panel-heading {
@@ -103,4 +107,20 @@ table {
 #schedule-panel,
 #add-panel {
   background: rgba(255, 255, 255, 0.9);
+}
+
+#add-train-btn {
+  background-color: #0378bb;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 80%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }

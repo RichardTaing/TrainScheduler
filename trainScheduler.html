@@ -23,6 +23,7 @@
 
     <!-- Link to Moment.js should go here -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 </head>
 
 <body>
@@ -31,6 +32,7 @@
 
         <div class="jumbotron text-center" id="jumbo">
             <h1>Public Transport Schedule</h1>
+            <h2 id="current-date"></h2>
             <h2 id="current-time"></h2>
         </div>
 
@@ -43,7 +45,7 @@
                 <table class="table table-striped">
                     </thead>
                     <tr>
-                        <th>Train Name</th>
+                        <th>Train Line</th>
                         <th>Destination</th>
                         <th>Frequency (min)</th>
                         <th>Next Arrival</th>
@@ -74,7 +76,7 @@
 
                 <form>
                     <div class="form-group">
-                        <label for="name">Train Name</label>
+                        <label for="name">Train Line</label>
                         <input class="form-control" id="name" type="text">
                     </div>
 

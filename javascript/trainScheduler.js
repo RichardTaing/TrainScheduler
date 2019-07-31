@@ -13,6 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 //variable to store database name
 var database = firebase.database();
+
 //Object to store entire firebase database as JSON object
 var firebaseDataObject = null;
 
@@ -35,11 +36,13 @@ function Train(name, destination, firstTrainTime, frequency) {
 
 $(document).ready(function() {
   //When page loads diplays initial current time
-  $("#current-time").text(moment().format("MMM DD hh:mm A"));
+  $("#current-date").text(moment().format("Do MMM YYYY"));
+  $("#current-time").text(moment().format("hh:mm A"));
 
   //Updates 'current time', 'next arrival' and 'minutes away' on page every 1 minute
   setInterval(function() {
-    $("#current-time").text(moment().format("MMM DD hh:mm A"));
+    $("#current-date").text(moment().format("Do MMM YYYY"));
+    $("#current-time").text(moment().format("hh:mm A"));
     displayTrainSchedule();
   }, 60000);
 
@@ -101,14 +104,12 @@ $(document).on("click", ".update", function() {
 //on.click for 'Close' button
 $("#close-btn").on("click", function(event) {
   event.preventDefault();
-
   updateDone();
 }); //END #close-btn.on"click"
 
 //on."click" for 'Update' button.
 $("#update-btn").on("click", function(event) {
   event.preventDefault();
-
   updateTrain();
 }); //END #update-btn.on"click"
 
@@ -116,7 +117,6 @@ $("#update-btn").on("click", function(event) {
 //Shows Add Train panel
 $("#add-train-btn").on("click", function(event) {
   event.preventDefault();
-
   $("#submit-btn").css("display", "initial");
   $("#add-panel").slideToggle();
 }); //END #add-train-btn.on"click"
@@ -168,7 +168,7 @@ function displayTrainSchedule() {
       newTableRow.append($("<td>").html(name));
       newTableRow.append($("<td>").html(destination));
       newTableRow.append($("<td>").html(frequency));
-      newTableRow.append($("<td>").html(nextArrival.format("MMM DD hh:mm A")));
+      newTableRow.append($("<td>").html(nextArrival.format("hh:mm A")));
       newTableRow.append($("<td>").html(minutesAway));
 
       // Creates 'Update' <div>s for train with attr 'key' of object key
@@ -202,8 +202,8 @@ function displayTrainSchedule() {
 
 //Creates a moment.js object from the 'first train time' value ('time' HH:mm) enterd by user
 function firstTimeString(time) {
-  //Creates a string storing today's date from monent() in YYYY-MM-DD format.
-  var currentDateString = moment().format("YYYY-MM-DD");
+  //Creates a string storing today's date from monent() in DD-MM-YYYY format.
+  var currentDateString = moment().format("DD-MM-YYYY");
 
   //Returns a string with todays date and time of first train.
   return currentDateString + "T" + time;
@@ -320,9 +320,9 @@ function getInputValues() {
       .trim()
   );
 
-  //Tests if 'Train Name' value is empty.
+  //Tests if 'Train Line' value is empty.
   if (name === "") {
-    alert("Please Enter A Train Name");
+    alert("Please Enter A Train Line");
     $("#name")
       .val("")
       .focus();
